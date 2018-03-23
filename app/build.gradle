@@ -1,15 +1,18 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 26
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 27
     defaultConfig {
         applicationId "io.freshdroid.mediapickerinstagram"
         minSdkVersion 16
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,9 +27,39 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support:multidex-instrumentation:1.0.3'
+
+    implementation 'com.android.support:appcompat-v7:27.1.0'
+
+    implementation 'com.jakewharton.timber:timber:4.6.0'
+
+    implementation 'com.google.dagger:dagger:2.15'
+    kapt 'com.google.dagger:dagger-compiler:2.15'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.uber.autodispose:autodispose-kotlin:0.6.1'
+    implementation 'com.uber.autodispose:autodispose-android-kotlin:0.6.1'
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents-kotlin:0.6.1'
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents-test-kotlin:0.6.1'
+
+    androidTestImplementation "com.android.support:support-annotations:27.1.0"
+    androidTestImplementation "com.android.support.test:rules:1.0.1"
+    androidTestImplementation "com.android.support.test:runner:1.0.1"
+    testImplementation "junit:junit:4.12"
+
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:2.2.2", {
+        exclude group: "com.android.support", module: "support-annotations"
+    }
+    androidTestImplementation("com.android.support.test.espresso:espresso-contrib:3.0.1") {
+        exclude group: "com.android.support", module: "appcompat"
+        exclude group: "com.android.support", module: "support-v4"
+        exclude group: "com.android.support", module: "support-annotations"
+        exclude module: "recyclerview-v7"
+    }
+
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
