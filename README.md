@@ -10,12 +10,6 @@
 * Capture video
 * Editor photo
 
-## Libraries
-### Core
-* Butter Knife --> [link](http://jakewharton.github.io/butterknife/)
-
-Code style for Android --> [link](http://source.android.com/source/code-style.html)
-
 ## Android Version Support
 Android fragmentation analytics --> [Platform Versions](http://developer.android.com/about/dashboards/index.html#Platform)
 
