@@ -33,6 +33,11 @@ dependencies {
     androidTestImplementation 'com.android.support:multidex-instrumentation:1.0.3'
 
     implementation 'com.android.support:appcompat-v7:27.1.0'
+    implementation 'com.android.support:design:27.1.0'
+    implementation 'com.android.support:support-v4:27.1.0'
+    implementation "com.android.support:support-v13:27.1.0"
+    implementation 'com.android.support:cardview-v7:27.1.0'
+    implementation 'com.android.support:recyclerview-v7:27.1.0'
 
     implementation 'com.jakewharton.timber:timber:4.6.0'
 
