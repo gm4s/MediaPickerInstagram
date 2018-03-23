@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MediaPickerInstagram</string>
+
+    <string name="tab_gallery">Gallery</string>
+    <string name="tab_photo">Photo</string>
+    <string name="tab_video">Video</string>
 </resources>
